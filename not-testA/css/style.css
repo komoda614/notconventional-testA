@@ -271,7 +271,7 @@ html body main .plan-a .item a .img-mask {
   height: 40vw;
   position: absolute;
   top: 0;
-  left: 0vw;
+  left: 0;
   transition: 1s;
 }
 
