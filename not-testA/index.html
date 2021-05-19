@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <header>
+        <a href=""><img src="image/not-logo.png" alt=""></a>
+        <ul>
+            <li><a href="">LOGIN</a></li>
+            <li><a href="">WISH LIST</a></li>
+            <li><a href="">SEARCH</a></li>
+            <li><a href="">CART</a></li>
+        </ul>
+        <!-- ハンバーガー ---------------------------------------------->
+        <div class="hamburger-menu">
+            <input type="checkbox" id="menu-btn-check" class="unshown">
+            <label for="menu-btn-check" class="menu-btn"><span></span></label>
+            <label class="unshown" id="nav-close" for="menu-btn-check"></label>
+            
+            <!--ここからメニュー-->
+            <div class="menu-content" id="menu-content">
+                <ul>
+                    <li>
+                        <a href="#model">モデル例</a>
+                    </li>
+                    <li>
+                        <a href="#process">導入の流れ</a>
+                    </li>
+                    <li>
+                        <a href="#contact">お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
+            <script>
+                $(function() {
+                    $('#menu-content li a').on('click', function(event) {
+                    $('#menu-btn-check').prop('checked', false);
+                    });
+                });
+            </script>
+            <!--ここまでメニュー-->
+        </div>
+        
+
+    </header>
+
+    <main>
+        <div class="plan-a">
+            <div class="item">
+                <a href="cape/index.html"><img src="image/cape.png" class="img-clothes"></a>
+                <a href="cape/index.html"><img src="image/mask-w.jpg" class="img-mask"></a>
+                <p>T/R CAPE JACKET #2</p>
+            </div>
+            <div class="item right">
+                <a href=""><img src="image/gassyo.png" class="img-clothes"></a>
+                <a href=""><img src="image/mask-w.jpg" class="img-mask"></a>
+                <p>合掌 shirt</p>
+            </div>
+            <div class="item">
+                <a href=""><img src="image/tonbi.png" class="img-clothes"></a>
+                <a href=""><img src="image/mask-w.jpg" class="img-mask"></a>
+                <p>tonbi shirt</p>
+            </div>
+
+
+        </div>
+
+        <div class="plan-b">
+
+        </div>
+        <!-- へこむボタン
+        <div class="btn">ボタン</div>
+         -->
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>

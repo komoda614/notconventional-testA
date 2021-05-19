@@ -1,0 +1,385 @@
+@charset "UFT-8";
+
+/* 共通部分 */
+html {
+  font-size: 1rem;
+  body {
+    font-family: sans-serif, "メイリオ", "Meiryo";
+    line-height: 1.7;
+    text-align: left;
+
+    a {
+      text-decoration: none; /*下線引かない*/
+      display: block; /*ブロック要素に*/
+      color: #000;
+    }
+    img {
+      max-width: 100%; /*画像がはみ出さないように*/
+      display: block;
+    }
+    ul {
+      list-style-type: none; /*listに-bl点つけない*/
+    }
+
+    header {
+      width: 100vw;
+      height: 5vw;
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      z-index: 99;
+      a {
+        padding-top: 1vw;
+        padding-left: 2vw;
+        width: 17vw;
+        height: 4vw;
+        img {
+          width: 8vw;
+          height: 4vw;
+        }
+      }
+      ul {
+        width: 83vw;
+        padding-right: 70px;
+        display: flex;
+        justify-content: flex-end;
+        li {
+          height: 5vw;
+          width: 7vw;
+          a {
+            padding: 0;
+            height: 5vw;
+            width: 7vw;
+            font-size: 1vw;
+            line-height: 9vw;
+          }
+        }
+      }
+      .hamburger-menu {
+        .menu-btn {
+          position: fixed;
+          top: 0;
+          right: 10px;
+          display: flex;
+          height: 70px;
+          width: 70px;
+          justify-content: center;
+          align-items: center;
+          z-index: 8;
+          background-color: #fff;
+          span {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 25px;
+            border-radius: 3px;
+            background-color: #000;
+            position: absolute;
+            &::before {
+              content: "";
+              display: block;
+              height: 3px;
+              width: 25px;
+              border-radius: 3px;
+              background-color: #000;
+              position: absolute;
+              bottom: 8px;
+            }
+            &::after {
+              content: "";
+              display: block;
+              height: 3px;
+              width: 25px;
+              border-radius: 3px;
+              background-color: #000;
+              position: absolute;
+              top: 8px;
+            }
+          } //span
+        } //nenu-btn
+        /* ボタンの×マーク */
+        #menu-btn-check:checked ~ .menu-btn span {
+          background-color: rgba(
+            255,
+            255,
+            255,
+            0
+          ); /*メニューオープン時は真ん中の線を透明にする*/
+        }
+        #menu-btn-check:checked ~ .menu-btn span::before {
+          bottom: 0;
+          transform: rotate(45deg);
+        }
+        #menu-btn-check:checked ~ .menu-btn span::after {
+          top: 0;
+          transform: rotate(-45deg);
+        }
+
+        .unshown {
+          display: none; /* チェックボックス隠す */
+        }
+
+        .menu-content {
+          // width: 100%;
+          // height: 100%;
+          // position: fixed;
+          // top: 0;
+          // left: 0;
+          // z-index: 7;
+          // background-color: #da6a36;
+          ul {
+            padding: 36px 10px 0;
+            li {
+              border-bottom: solid 1px #000;
+              list-style: none;
+              a {
+                display: block;
+                width: 70%;
+                font-size: 15px;
+                box-sizing: border-box;
+                color: #000;
+                text-decoration: none;
+                padding: 9px 15px 10px 0;
+                margin-bottom: 5px;
+                position: relative;
+                &::before {
+                  content: "";
+                  width: 7px;
+                  height: 7px;
+                  border-top: solid 2px #000;
+                  border-right: solid 2px #000;
+                  transform: rotate(45deg);
+                  position: absolute;
+                  right: 11px;
+                  top: 16px;
+                }
+              }
+            } //li
+          } //ul
+          /* メニューをいったん外へ */
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 70px;
+          left: 100%; /*leftの値を変更してメニューを画面外へ*/
+          z-index: 7;
+          background-color: #fff;
+          transition: all 0.2s; /*アニメーション設定*/
+        } //menu-content
+        #menu-btn-check:checked ~ .menu-content {
+          top: 70px;
+          left: 30%; /*ボタンタップでメニューを画面内へ*/
+        }
+        /*閉じる用の薄黒箇所*/
+        // #nav-close {
+        //   position: fixed;
+        //   z-index: 11;
+        //   top: 0;
+        //   right: 0;
+        //   width: 100%;
+        //   height: 100%;
+        //   background: black;
+        //   opacity: 0.5;
+        // }
+        /* 黒いとこいったん外へ */
+        #nav-close {
+          position: fixed;
+          z-index: 11;
+          top: 70px;
+          right: 100%; /*rightの値を変更してメニューを画面外へ*/
+          width: 100%;
+          height: 100%;
+          background: black;
+          opacity: 0.5;
+          transition: all 0.2s; /*アニメーション設定*/
+        }
+        /*チェックがついたら表示させる*/
+        #menu-btn-check:checked ~ #nav-close {
+          top: 70px;
+          right: 70%; /*ボタンタップでメニューを画面内へ*/
+          display: block;
+        }
+        /* ここまでハンバーガー--------------------------------------------------- */
+      } //hamburger-menu
+    } //header
+
+    main {
+      padding-top: 10vw;
+      .channel {
+        padding-left: 2vw;
+        display: flex;
+        .channel-link {
+          font-size: 1vw;
+        }
+        .arrow {
+          margin: 0 0.5vw;
+          font-size: 1vw;
+        }
+      } //channel
+      .instagram-btn {
+        width: 50px;
+        height: 50px;
+        background-color: #000;
+        position: fixed;
+        top: 70px;
+        right: 0;
+      }
+
+      .commodity-container {
+        margin: 2vw 2vw 0 2vw;
+        width: 96vw;
+        display: flex;
+        .model-viewer {
+          width: 46vw;
+          height: 56vw;
+          .custom-ar-button {
+            width: 0;
+            height: 0;
+          }
+        }
+
+        .commodity-description {
+          width: 50vw;
+          .commodity-name {
+            margin-bottom: 1.5vw;
+            font-size: 1.4vw;
+            font-weight: 600;
+            span {
+              margin-left: 1vw;
+              padding: 0.2vw;
+              font-size: 1vw;
+              font-weight: 300;
+              border: 1px solid #000;
+            }
+          } //commodity-name
+          .commodity-price {
+            margin-bottom: 2vw;
+            font-size: 1.4vw;
+            font-weight: 600;
+            span {
+              margin-left: 0.5vw;
+              font-size: 1vw;
+              font-weight: bold;
+            }
+          } //commodity-price
+          .commodity-option {
+            margin-bottom: 1.5vw;
+            display: flex;
+            a {
+              width: 8vw;
+              height: 3vw;
+              line-height: 3vw;
+              text-align: center;
+              border: 1px solid #000;
+            }
+            .white {
+              color: #fff;
+              background-color: #000;
+            }
+          } //commodity-option
+
+          .commodity-details {
+            margin-bottom: 1.5vw;
+            color: gray;
+            font-size: 1.1vw;
+            font-weight: 100;
+          } //commodity-details
+
+          .forms {
+            margin: 3vw 0 2vw 0;
+            width: 50vw;
+            .form-item {
+              display: inline-block;
+              input {
+                width: 10vw;
+                border: 1px solid #979797;
+                border-radius: 3px;
+              }
+            }
+            .form-a {
+              width: 10vw;
+              margin-left: 5vw;
+              input {
+                background-color: #f5f5f5;
+              }
+            }
+            .form-b {
+              width: 10vw;
+              margin-left: 0.5vw;
+              input {
+                background-color: #f5f5f5;
+              }
+            }
+            .form-c {
+              margin-left: 5vw;
+              width: 10vw;
+              input {
+                width: 3vw;
+              }
+            }
+          } //forms
+
+          .shopping-btn {
+            margin: 2vw auto;
+            width: 30vw;
+            height: 3vw;
+            line-height: 3vw;
+            text-align: center;
+            color: #fff;
+            background-color: #000;
+            border: 1px solid #000;
+          }
+          .reserve-btn {
+            margin: 2vw auto;
+            width: 30vw;
+            height: 3vw;
+            line-height: 3vw;
+            text-align: center;
+            color: #000;
+            background-color: #fff;
+            border: 1px solid #000;
+          }
+          .wish-btn {
+            margin: 2vw auto;
+            padding-bottom: 2px;
+            width: 10vw;
+            height: 1.5vw;
+            line-height: 1.5vw;
+            font-size: 1vw;
+            text-align: center;
+            border-bottom: 1px solid #000;
+          }
+          .line-btn {
+            margin: 2vw auto;
+            width: 15vw;
+          }
+        } //commodity-description
+      } //commodity-container
+      /*
+      .btn {
+        padding: 8px 24px;
+        color: white;
+        opacity: 0.8;
+        border-radius: 4px;
+        background-color: #f778b8;
+        cursor: pointer;
+        box-shadow: 0 5px #e04893;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &:active {
+          position: relative;
+          top: 7px;
+          box-shadow: none;
+        }
+    
+      } //btn
+      へこむボタン*/
+    }
+  } //body
+} //html
