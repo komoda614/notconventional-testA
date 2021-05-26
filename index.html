@@ -11,25 +11,47 @@
 </head>
 
 <body>
-    <a href="#model-viewer" id="top_img" class="show"><img src="image/frontispiece_smf.png" alt=""></a>
+    <a href="#circle1" id="top_img_smf" class="show"><img src="image/frontispiece_smf.png" alt=""></a>
+    <a href="#circle1" id="top_img" class="show"><img src="image/frontispiece_pc.png" alt=""></a>
+
     <header>
+
         <ul>
-            <li class="et_pb_module"><a href="#circle1" class="secList" ><img src="image/circle1.png" alt=""></a></li>
-            <li class="et_pb_module"><a href="#circle2" class="secList" ><img src="image/circle2.png" alt=""></a></li>
-            <li class="et_pb_module"><a href="#circle3" class="secList" ><img src="image/circle3.png" alt=""></a></li>
-            <li class="et_pb_module"><a href="#circle4" class="secList" ><img src="image/circle4.png" alt=""></a></li>
-            <li class="et_pb_module"><a href="#circle5" class="secList" ><img src="image/circle5.png" alt=""></a></li>
-            <li class="et_pb_module"><a href="#circle6" class="secList" ><img src="image/circle6.png" alt=""></a></li>
-            <li class="et_pb_module"><a href="#circle7" class="secList" ><img src="image/circle7.png" alt=""></a></li>
-            <li class="et_pb_module"><a href="#circle8" class="secList" ><img src="image/circle8.png" alt=""></a></li>
-            <li class="et_pb_module"><a href="#circle9" class="secList" ><img src="image/circle9.png" alt=""></a></li>
-            <li class="et_pb_module"><a href="#circle10" class="secList" ><img src="image/circle10.png" alt=""></a></li>
+            <li class="et_pb_module"><a href="#circle1" class="secList secList1 active" ><img src="image/circle1.png" alt=""></a></li>
+            <!-- <li class="et_pb_module-w"><img src="image/circle1w.png" class="secList-w secList-w1" alt=""></li> -->
+
+            <li class="et_pb_module"><a href="#circle2" class="secList secList2" ><img src="image/circle2.png" alt=""></a></li>
+            <!-- <li class="et_pb_module-w"><img src="image/circle2w.png" class="secList-w secList-w2" alt=""></li> -->
+
+            <li class="et_pb_module"><a href="#circle3" class="secList secList3" ><img src="image/circle3.png" alt=""></a></li>
+            <!-- <li class="et_pb_module-w"><img src="image/circle3w.png" class="secList-w secList-w3" alt=""></li> -->
+
+            <li class="et_pb_module"><a href="#circle4" class="secList secList4" ><img src="image/circle4.png" alt=""></a></li>
+            <!-- <li class="et_pb_module-w"><img src="image/circle4w.png" class="secList-w secList-w4" alt=""></li> -->
+
+            <li class="et_pb_module"><a href="#circle5" class="secList secList5" ><img src="image/circle5.png" alt=""></a></li>
+            <!-- <li class="et_pb_module-w"><img src="image/circle5w.png" class="secList-w secList-w5" alt=""></li> -->
+
+            <li class="et_pb_module"><a href="#circle6" class="secList secList6" ><img src="image/circle6.png" alt=""></a></li>
+            <!-- <li class="et_pb_module-w"><img src="image/circle6w.png" class="secList-w secList-w6" alt=""></li> -->
+
+            <li class="et_pb_module"><a href="#circle7" class="secList secList7" ><img src="image/circle7.png" alt=""></a></li>
+            <!-- <li class="et_pb_module-w"><img src="image/circle7w.png" class="secList-w secList-w7" alt=""></li> -->
+
+            <li class="et_pb_module"><a href="#circle8" class="secList secList8" ><img src="image/circle8.png" alt=""></a></li>
+            <!-- <li class="et_pb_module-w"><img src="image/circle8w.png" class="secList-w secList-w8" alt=""></li> -->
+
+            <li class="et_pb_module"><a href="#circle9" class="secList secList9" ><img src="image/circle9.png" alt=""></a></li>
+            <!-- <li class="et_pb_module-w"><img src="image/circle9w.png" class="secList-w secList-w9" alt=""></li> -->
+
+            <li class="et_pb_module"><a href="#circle10" class="secList secList10" ><img src="image/circle10.png" alt=""></a></li>
+            <!-- <li class="et_pb_module-w"><img src="image/circle10w.png" class="secList-w secList-w10" alt=""></li> -->
         </ul>
 
     </header>
 
     <main>
-        <div id="circle1" class="section">
+        <div id="circle1" class="section first-section">
             <!-- slick.jsアイテム-->
             <!-- ios-srcとsrcのパスは要変更-->
             <model-viewer
@@ -267,34 +289,125 @@
     
 
     <script>
-        
         $(function() {
- 
+            // ボタンをクリックしたら発動
+            $('#top_img_smf').click(function() {
+
+                // 素早くフェードアウトさせる
+                $('#top_img_smf').fadeOut('slow');
+            });
+        });
+    </script>
+    <script>
+        $(function() {
             // ボタンをクリックしたら発動
             $('#top_img').click(function() {
 
                 // 素早くフェードアウトさせる
                 $('#top_img').fadeOut('slow');
+            });
+        });
+    </script>
+    
 
+    <script>
+        $(function(){
+            $('.section').hide();
+            $('#circle1').show();
+
+            $('.secList').on('click',function(){
+                $('.section').not($($(this).attr('href'))).hide();
+
+                // フェードイン・アウトのアニメーション付で、表示・非表示を交互に実行する
+                // $($(this).attr('href')).fadeToggle(1000);
+
+                // show を使うと、表示するだけ （ 同じボタンを何回押しても変わらない ）
+                $($(this).attr('href')).show();
             });
         });
     </script>
 
     <script>
         $(function(){
-            $('.section').hide();
-
-            $('.secList').on('click',function(){
-                $('.section').not($($(this).attr('href'))).hide();
-
-                // フェードイン・アウトのアニメーション付で、表示・非表示を交互に実行する
-                $($(this).attr('href')).fadeToggle(1000);
-
-                // show を使うと、表示するだけ （ 同じボタンを何回押しても変わらない ）
-                // $($(this).attr('href')).show();
+            var btn = $('.secList');
+            btn.click(function(){
+                btn.removeClass('active');
+                $(this).addClass('active');
             });
         });
     </script>
+
+    <!-- <script>
+        document.getElementById("#circle1").onclick = function() {
+        // ここに#buttonをクリックしたら発生させる処理を記述する
+        $('#circle1, .secList-w2, .secList-w3, .secList-w4, .secList-w5, .secList-w6, .secList-w7, .secList-w8, .secList-w9, .secList-w10').hide();
+        $('.secList-w1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7, #circle8, #circle9, #circle10').show();
+        };
+    </script>
+    <script>
+        document.getElementById("#circle2").onclick = function() {
+        // ここに#buttonをクリックしたら発生させる処理を記述する
+        $('#circle2, .secList-w3, .secList-w4, .secList-w5, .secList-w6, .secList-w7, .secList-w8, .secList-w9, .secList-w10, .secList-w1').hide();
+        $('.secList-w2, #circle3, #circle4, #circle5, #circle6, #circle7, #circle8, #circle9, #circle10, #circle1').show();
+        };
+    </script>
+    <script>
+        document.getElementById("#circle3").onclick = function() {
+        // ここに#buttonをクリックしたら発生させる処理を記述する
+        $('#circle3, .secList-w4, .secList-w5, .secList-w6, .secList-w7, .secList-w8, .secList-w9, .secList-w10, .secList-w1, .secList-w2').hide();
+        $('.secList-w3, #circle4, #circle5, #circle6, #circle7, #circle8, #circle9, #circle10, #circle1, #circle2').show();
+        };
+    </script>
+    <script>
+        document.getElementById("#circle4").onclick = function() {
+        // ここに#buttonをクリックしたら発生させる処理を記述する
+        $('#circle4, .secList-w5, .secList-w6, .secList-w7, .secList-w8, .secList-w9, .secList-w10, .secList-w1, .secList-w2, .secList-w3').hide();
+        $('.secList-w4, #circle5, #circle6, #circle7, #circle8, #circle9, #circle10, #circle1, #circle2, #circle3').show();
+        };
+    </script>
+    <script>
+        document.getElementById("#circle5").onclick = function() {
+        // ここに#buttonをクリックしたら発生させる処理を記述する
+        $('#circle5, .secList-w6, .secList-w7 .secList-w8, .secList-w9, .secList-w10, .secList-w1, .secList-w2, .secList-w3, .secList-w4').hide();
+        $('.secList-w5, #circle6, #circle7, #circle8, #circle9, #circle10, #circle1, #circle2, #circle3, #circle4').show();
+        };
+    </script>
+    <script>
+        document.getElementById("#circle6").onclick = function() {
+        // ここに#buttonをクリックしたら発生させる処理を記述する
+        $('#circle6, .secList-w7, .secList-w8, .secList-w9, .secList-w10, .secList-w1, .secList-w2, .secList-w3, .secList-w4, .secList-w5').hide();
+        $('.secList-w6, #circle7, #circle8, #circle9, #circle10, #circle1, #circle2, #circle3, #circle4, #circle5').show();
+        };
+    </script>
+    <script>
+        document.getElementById("#circle7").onclick = function() {
+        // ここに#buttonをクリックしたら発生させる処理を記述する
+        $('#circle7, .secList-w8, .secList-w9, .secList-w10, .secList-w1, .secList-w2, .secList-w3 .secList-w4, .secList-w5, .secList-w6').hide();
+        $('.secList-w7, #circle8, #circle9, #circle10, #circle1, #circle2, #circle3, #circle4, #circle5, #circle6').show();
+        };
+    </script>
+    <script>
+        document.getElementById("#circle8").onclick = function() {
+        // ここに#buttonをクリックしたら発生させる処理を記述する
+        $('#circle8, .secList-w9, .secList-w10, .secList-w1, .secList-w2, .secList-w3, .secList-w4, .secList-w5, .secList-w6, .secList-w7').hide();
+        $('.secList-w8, #circle9, #circle10, #circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7').show();
+        };
+    </script>
+    <script>
+        document.getElementById("#circle9").onclick = function() {
+        // ここに#buttonをクリックしたら発生させる処理を記述する
+        $('#circle9, .secList-w10, .secList-w1, .secList-w2, .secList-w3, .secList-w4, .secList-w5, .secList-w6, .secList-w7, .secList-w8').hide();
+        $('.secList-w9, #circle10, #circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7, #circle8').show();
+        };
+    </script>
+    <script>
+        document.getElementById("#circle10").onclick = function() {
+        // ここに#buttonをクリックしたら発生させる処理を記述する
+        $('#circle10, .secList-w1, .secList-w2, .secList-w3, .secList-w4, .secList-w5, .secList-w6, .secList-w7, .secList-w8, .secList-w9').hide();
+        $('.secList-w10, #circle1, #circle2, #circle3, #circle4, #circle5, #circle6, #circle7, #circle8, #circle9').show();
+        };
+    </script> -->
+    
 
 
 </body>

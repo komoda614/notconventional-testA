@@ -25,7 +25,8 @@ html body img {
   /*画像がはみ出さないように*/
 }
 
-html body #top_img {
+html body #top_img_smf {
+  display: block;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -35,15 +36,51 @@ html body #top_img {
   /* 一番手前に */
 }
 
-html body #top_img img {
+@media (min-width: 1025px) {
+  html body #top_img_smf {
+    display: none;
+  }
+}
+
+html body #top_img_smf img {
   width: 100vw;
   height: 100vh;
+}
+
+html body #top_img {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  html body #top_img {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    /* 一番手前に */
+  }
+  html body #top_img img {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 html body header {
   width: 20vw;
   height: 100vh;
   background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media (min-width: 1025px) {
+  html body header {
+    width: 30vw;
+  }
 }
 
 html body header ul {
@@ -55,20 +92,54 @@ html body header ul {
   align-items: center;
 }
 
-html body header ul li a {
+@media (min-width: 1025px) {
+  html body header ul {
+    width: 30vw;
+  }
+}
+
+html body header ul li .secList {
   padding: 0;
   width: 12vw;
   height: 12vw;
 }
 
-html body header ul li a img {
+@media (min-width: 1025px) {
+  html body header ul li .secList {
+    margin: auto 3vw;
+    width: 8vw;
+    height: 8vw;
+  }
+}
+
+html body header ul li .secList img {
   width: 12vw;
   height: 12vw;
 }
 
+@media (min-width: 1025px) {
+  html body header ul li .secList img {
+    width: 8vw;
+    height: 8vw;
+  }
+}
+
+html body header ul li .active {
+  opacity: 0.5;
+}
+
+html body header .black-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 html body main {
-  width: 85vw;
+  width: 80vw;
   height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 20vw;
   /*
       .btn {
         padding: 8px 24px;
@@ -93,6 +164,13 @@ html body main {
       へこむボタン*/
 }
 
+@media (min-width: 1025px) {
+  html body main {
+    width: 70vw;
+    left: 30vw;
+  }
+}
+
 html body main .section {
   /* widthやheightの値は要カスタマイズ */
 }
@@ -103,6 +181,12 @@ html body main .section .model-viewer {
   background-image: url(../image/space.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media (min-width: 1025px) {
+  html body main .section .model-viewer {
+    width: 70vw;
+  }
 }
 
 html body main .section ​ .model-viewer-btn {
