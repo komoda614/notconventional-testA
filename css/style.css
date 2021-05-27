@@ -25,7 +25,7 @@ html body img {
   /*画像がはみ出さないように*/
 }
 
-html body #top_img_smf {
+html body .top_screen_smf {
   display: block;
   width: 100vw;
   height: 100vh;
@@ -37,41 +37,72 @@ html body #top_img_smf {
 }
 
 @media (min-width: 1025px) {
-  html body #top_img_smf {
+  html body .top_screen_smf {
     display: none;
   }
 }
 
-html body #top_img_smf img {
+html body .top_screen_smf .screen_smf {
   width: 100vw;
   height: 100vh;
 }
 
-html body #top_img {
+html body .top_screen_smf #top_img_smf {
+  width: 50vw;
+  height: 10vw;
+  position: fixed;
+  top: 70vh;
+  left: 25vw;
+  z-index: 9999;
+}
+
+html body .top_screen_smf #top_img_smf .lookbook_btn {
+  width: 50vw;
+  height: 10vw;
+}
+
+html body .top_screen_pc {
   display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  /* 一番手前に */
+}
+
+html body .top_screen_pc .screen_pc {
+  width: 100vw;
+  height: 100vh;
+}
+
+html body .top_screen_pc #top_img_pc {
+  width: 18vw;
+  height: 4vw;
+  position: fixed;
+  top: 83vh;
+  left: 41vw;
+  z-index: 9999;
+}
+
+html body .top_screen_pc #top_img_pc .lookbook_btn {
+  width: 18vw;
+  height: 4vw;
 }
 
 @media (min-width: 1025px) {
-  html body #top_img {
+  html body .top_screen_pc {
     display: block;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    /* 一番手前に */
-  }
-  html body #top_img img {
-    width: 100vw;
-    height: 100vh;
   }
 }
 
 html body header {
   width: 20vw;
   height: 100vh;
-  background-color: #000;
+  background-image: url(../image/sidebar_smf.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   position: fixed;
   top: 0;
   left: 0;
@@ -79,11 +110,16 @@ html body header {
 
 @media (min-width: 1025px) {
   html body header {
+    overflow: scroll;
+    padding: 6vh 5.5vw 10vh 5.5vw;
     width: 30vw;
+    background-image: url(../image/sidebar_pc.png);
+    background-size: 100% 100vh;
   }
 }
 
 html body header ul {
+  padding-top: 2vh;
   width: 20vw;
   height: 100vh;
   display: flex;
@@ -94,7 +130,9 @@ html body header ul {
 
 @media (min-width: 1025px) {
   html body header ul {
-    width: 30vw;
+    width: 19vw;
+    height: 150vh;
+    justify-content: space-between;
   }
 }
 
@@ -106,7 +144,6 @@ html body header ul li .secList {
 
 @media (min-width: 1025px) {
   html body header ul li .secList {
-    margin: auto 3vw;
     width: 8vw;
     height: 8vw;
   }
@@ -199,4 +236,24 @@ html body main .section ​ .model-viewer-btn {
   color: white;
   background-color: #6b6868;
   border: none;
+}
+
+html body main .section .model1 {
+  background-image: url(../image/bg1_smf.png);
+}
+
+@media (min-width: 1025px) {
+  html body main .section .model1 {
+    background-image: url(../image/bg1_pc.png);
+  }
+}
+
+html body main .section .model2 {
+  background-image: url(../image/bg2_smf.png);
+}
+
+@media (min-width: 1025px) {
+  html body main .section .model2 {
+    background-image: url(../image/bg2_pc.png);
+  }
 }
