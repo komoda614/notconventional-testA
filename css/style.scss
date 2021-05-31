@@ -227,6 +227,7 @@ html {
         .model-viewer {
           width: 85vw;
           height: 100vh;
+          background-image: url(../image/space.jpg);
           background-repeat: no-repeat;
           background-size: cover;
           @include screen-pc {
@@ -252,54 +253,6 @@ html {
           }
         }
         .model2 {
-          background-image: url(../image/bg2_smf.png);
-          @include screen-pc {
-            background-image: url(../image/bg2_pc.png);
-          }
-        }
-        .model3 {
-          background-image: url(../image/bg1_smf.png);
-          @include screen-pc {
-            background-image: url(../image/bg1_pc.png);
-          }
-        }
-        .model4 {
-          background-image: url(../image/bg2_smf.png);
-          @include screen-pc {
-            background-image: url(../image/bg2_pc.png);
-          }
-        }
-        .model5 {
-          background-image: url(../image/bg1_smf.png);
-          @include screen-pc {
-            background-image: url(../image/bg1_pc.png);
-          }
-        }
-        .model6 {
-          background-image: url(../image/bg2_smf.png);
-          @include screen-pc {
-            background-image: url(../image/bg2_pc.png);
-          }
-        }
-        .model7 {
-          background-image: url(../image/bg1_smf.png);
-          @include screen-pc {
-            background-image: url(../image/bg1_pc.png);
-          }
-        }
-        .model8 {
-          background-image: url(../image/bg2_smf.png);
-          @include screen-pc {
-            background-image: url(../image/bg2_pc.png);
-          }
-        }
-        .model9 {
-          background-image: url(../image/bg1_smf.png);
-          @include screen-pc {
-            background-image: url(../image/bg1_pc.png);
-          }
-        }
-        .model10 {
           background-image: url(../image/bg2_smf.png);
           @include screen-pc {
             background-image: url(../image/bg2_pc.png);
