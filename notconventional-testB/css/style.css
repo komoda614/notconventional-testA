@@ -521,6 +521,7 @@ html body main .section {
 html body main .section .model-viewer {
   width: 100vw;
   height: 100vh;
+  background-image: url(../image/space.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -553,86 +554,6 @@ html body main .section .model2 {
 
 @media (min-width: 1025px) {
   html body main .section .model2 {
-    background-image: url(../image/bg2_pc.png);
-  }
-}
-
-html body main .section .model3 {
-  background-image: url(../image/bg1_smf.png);
-}
-
-@media (min-width: 1025px) {
-  html body main .section .model3 {
-    background-image: url(../image/bg1_pc.png);
-  }
-}
-
-html body main .section .model4 {
-  background-image: url(../image/bg2_smf.png);
-}
-
-@media (min-width: 1025px) {
-  html body main .section .model4 {
-    background-image: url(../image/bg2_pc.png);
-  }
-}
-
-html body main .section .model5 {
-  background-image: url(../image/bg1_smf.png);
-}
-
-@media (min-width: 1025px) {
-  html body main .section .model5 {
-    background-image: url(../image/bg1_pc.png);
-  }
-}
-
-html body main .section .model6 {
-  background-image: url(../image/bg2_smf.png);
-}
-
-@media (min-width: 1025px) {
-  html body main .section .model6 {
-    background-image: url(../image/bg2_pc.png);
-  }
-}
-
-html body main .section .model7 {
-  background-image: url(../image/bg1_smf.png);
-}
-
-@media (min-width: 1025px) {
-  html body main .section .model7 {
-    background-image: url(../image/bg1_pc.png);
-  }
-}
-
-html body main .section .model8 {
-  background-image: url(../image/bg2_smf.png);
-}
-
-@media (min-width: 1025px) {
-  html body main .section .model8 {
-    background-image: url(../image/bg2_pc.png);
-  }
-}
-
-html body main .section .model9 {
-  background-image: url(../image/bg1_smf.png);
-}
-
-@media (min-width: 1025px) {
-  html body main .section .model9 {
-    background-image: url(../image/bg1_pc.png);
-  }
-}
-
-html body main .section .model10 {
-  background-image: url(../image/bg2_smf.png);
-}
-
-@media (min-width: 1025px) {
-  html body main .section .model10 {
     background-image: url(../image/bg2_pc.png);
   }
 }
