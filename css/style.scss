@@ -94,18 +94,58 @@ html {
       } //screen-pc
     } //top_screen_pc
 
+    .header {
+      height: 10vw;
+      width: 100vw;
+      background-color: rgba($color: #fff, $alpha: 0.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 98;
+      @include screen-pc {
+        height: 5vw;
+      }
+      .header_left {
+        height: 10vw;
+        @include screen-pc {
+          height: 5vw;
+        }
+      }
+      .header_right {
+        display: flex;
+        .cart {
+          height: 8vw;
+          @include screen-pc {
+            display: none;
+          }
+        }
+        .cart_pc {
+          display: none;
+          @include screen-pc {
+            display: block;
+            height: 4vw;
+          }
+        }
+      }
+    }
+
     header {
       width: 20vw;
-      height: 100vh;
+      height: calc(100vh - 10vw);
       background-image: url(../image/sidebar_smf.png);
       background-size: 100% 100%;
       background-repeat: no-repeat;
       position: fixed;
-      top: 0;
+      top: 10vh;
       left: 0;
       @include screen-pc {
         padding: 0 5vw 0 5vw;
         width: 25vw;
+        height: calc(100vh - 5vw);
+        top: 5vw;
         background-image: url(../image/sidebar_pc.png);
         background-size: 100% 100vh;
         // background-attachment: fixed;
@@ -113,14 +153,14 @@ html {
       ul {
         padding-top: 0;
         width: 20vw;
-        height: 100vh;
+        height: calc(100vh - 10vw);
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         @include screen-pc {
           width: 15vw;
-          height: 100vh;
+          height: calc(100vh - 5vw);
           justify-content: space-between;
         }
         li {
@@ -147,35 +187,56 @@ html {
           }
         } //li
       } //ul
-      .black-list {
-        position: fixed;
-        top: 0;
-        left: 0;
-      }
+      // .black-list {
+      //   position: fixed;
+      //   top: 0;
+      //   left: 0;
+      // }
     } //header
 
     main {
-      width: 80vw;
-      height: 100vh;
+      width: 85vw;
+      height: calc(100vh - 10vw);
       position: fixed;
-      top: 0;
+      top: 10vw;
       left: 20vw;
       @include screen-pc {
         width: 75vw;
+        height: calc(100vh - 5vw);
         left: 25vw;
+        top: 5vw;
       }
+
+      .instagram {
+        position: fixed;
+        top: 10vw;
+        right: 0;
+        z-index: 98;
+        @include screen-pc {
+          top: 5vw;
+        }
+      }
+      .line {
+        position: fixed;
+        bottom: 5vw;
+        right: 1vw;
+        z-index: 98;
+      }
+
       .section {
         /* widthやheightの値は要カスタマイズ */
         .model-viewer {
           width: 85vw;
-          height: 100vh;
+          height: calc(100vh - 10vw);
           background-repeat: no-repeat;
           background-size: cover;
           @include screen-pc {
             width: 75vw;
+            height: calc(100vh - 5vw);
           }
         }
         ​ .model-viewer-btn {
+          display: none;
           position: absolute;
           right: 16px;
           bottom: 10px;
