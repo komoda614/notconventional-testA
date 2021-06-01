@@ -147,15 +147,15 @@ html {
         left: 25vw;
       }
 
-      .instagram {
-        position: fixed;
-        top: 10vw;
-        right: 0;
-        z-index: 98;
-        @include screen-pc {
-          top: 5vw;
-        }
-      }
+      // .instagram {
+      //   position: fixed;
+      //   top: 10vw;
+      //   right: 0;
+      //   z-index: 98;
+      //   @include screen-pc {
+      //     top: 5vw;
+      //   }
+      // }
       .line {
         position: fixed;
         bottom: 5vw;
@@ -176,6 +176,7 @@ html {
           }
         }
         ​ .model-viewer-btn {
+          display: none;
           position: absolute;
           right: 16px;
           bottom: 10px;
