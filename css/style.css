@@ -97,14 +97,68 @@ html body .top_screen_pc #top_img_pc .lookbook_btn {
   }
 }
 
+html body .header {
+  height: 10vw;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 98;
+}
+
+@media (min-width: 1025px) {
+  html body .header {
+    height: 5vw;
+  }
+}
+
+html body .header .header_left {
+  height: 10vw;
+}
+
+@media (min-width: 1025px) {
+  html body .header .header_left {
+    height: 5vw;
+  }
+}
+
+html body .header .header_right {
+  display: flex;
+}
+
+html body .header .header_right .cart {
+  height: 8vw;
+}
+
+@media (min-width: 1025px) {
+  html body .header .header_right .cart {
+    display: none;
+  }
+}
+
+html body .header .header_right .cart_pc {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  html body .header .header_right .cart_pc {
+    display: block;
+    height: 4vw;
+  }
+}
+
 html body header {
   width: 20vw;
-  height: 100vh;
+  height: calc(100vh - 10vw);
   background-image: url(../image/sidebar_smf.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   position: fixed;
-  top: 0;
+  top: 10vh;
   left: 0;
 }
 
@@ -112,6 +166,8 @@ html body header {
   html body header {
     padding: 0 5vw 0 5vw;
     width: 25vw;
+    height: calc(100vh - 5vw);
+    top: 5vw;
     background-image: url(../image/sidebar_pc.png);
     background-size: 100% 100vh;
   }
@@ -120,7 +176,7 @@ html body header {
 html body header ul {
   padding-top: 0;
   width: 20vw;
-  height: 100vh;
+  height: calc(100vh - 10vw);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -130,7 +186,7 @@ html body header ul {
 @media (min-width: 1025px) {
   html body header ul {
     width: 15vw;
-    height: 100vh;
+    height: calc(100vh - 5vw);
     justify-content: space-between;
   }
 }
@@ -164,17 +220,11 @@ html body header ul li .active {
   opacity: 0.5;
 }
 
-html body header .black-list {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
 html body main {
-  width: 80vw;
-  height: 100vh;
+  width: 85vw;
+  height: calc(100vh - 10vw);
   position: fixed;
-  top: 0;
+  top: 10vw;
   left: 20vw;
   /*
       .btn {
@@ -203,8 +253,30 @@ html body main {
 @media (min-width: 1025px) {
   html body main {
     width: 75vw;
+    height: calc(100vh - 5vw);
     left: 25vw;
+    top: 5vw;
   }
+}
+
+html body main .instagram {
+  position: fixed;
+  top: 10vw;
+  right: 0;
+  z-index: 98;
+}
+
+@media (min-width: 1025px) {
+  html body main .instagram {
+    top: 5vw;
+  }
+}
+
+html body main .line {
+  position: fixed;
+  bottom: 5vw;
+  right: 1vw;
+  z-index: 98;
 }
 
 html body main .section {
@@ -213,7 +285,7 @@ html body main .section {
 
 html body main .section .model-viewer {
   width: 85vw;
-  height: 100vh;
+  height: calc(100vh - 10vw);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -221,10 +293,12 @@ html body main .section .model-viewer {
 @media (min-width: 1025px) {
   html body main .section .model-viewer {
     width: 75vw;
+    height: calc(100vh - 5vw);
   }
 }
 
 html body main .section ​ .model-viewer-btn {
+  display: none;
   position: absolute;
   right: 16px;
   bottom: 10px;
