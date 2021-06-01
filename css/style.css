@@ -168,7 +168,7 @@ html body header {
     width: 25vw;
     height: calc(100vh - 5vw);
     top: 5vw;
-    background-image: url(../image/sidebar_pc.png);
+    background-image: url(../image/art2.png);
     background-size: 100% 100vh;
   }
 }
